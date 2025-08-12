@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 const NavBar = () => {
   return (
-    <div className="absolute top-0 left-0 h-[15%] w-full flex justify-between items-center px-[5dvw]">
+    <div className="absolute top-0 left-0 h-[15%] w-full flex justify-between items-center px-[5dvw] z-20">
       <Logo />
       <div className="flex gap-[14px] font-[Space]">
         <span className="Underline text-[14px] font-black">LAUNCH</span>

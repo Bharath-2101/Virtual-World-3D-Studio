@@ -2,7 +2,7 @@ import React from "react";
 
 const Desc = () => {
   return (
-    <div className="h-[100dvh] w-[100dvw] grid grid-rows-[3fr_9fr_1fr] px-[5dvw] font-[Space]">
+    <div className="h-[100dvh] w-[100dvw] grid grid-rows-[3fr_9fr_1fr] px-[5dvw] font-[Space] lg:mt-[20vh]">
       <div className="flex flex-col gap-1 justify-center">
         <span className="font-black text-[clamp(1rem,5vw,2.25rem)]">
           The Craft of Digital
