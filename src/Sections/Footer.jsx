@@ -1,43 +1,55 @@
-import React from "react";
+import React, { useMemo, useRef, useState } from "react";
 import Logo from "../Components/Logo";
+import useTitle from "../Hooks/UseTitle";
 
 const Footer = () => {
-  const socialMedia = [
-    { title: "INSTAGRAM", link: "" },
-    { title: "TWITTER", link: "" },
-    { title: "LINKEDIN", link: "" },
-  ];
+  const socialMedia = useMemo(
+    () => [
+      { title: "INSTAGRAM", link: "#" },
+      { title: "TWITTER", link: "#" },
+      { title: "LINKEDIN", link: "#" },
+    ],
+    []
+  );
+  const [hover, setHover] = useState(false);
+  const titleRef = useRef();
+  useTitle(titleRef, "[ CONTACT ]");
+
   return (
-    <div className="px-[5dvw] mt-[15vh] flex flex-col bg-[#afd93b] py-4">
-      <span className="font-black text-[clamp(1rem,6vw,2.25rem)]">
+    <footer className="px-[5dvw] mt-[15vh] flex flex-col bg-[#afd93b] py-4">
+      <h2 ref={titleRef} className="font-black text-[clamp(1rem,6vw,2.25rem)]">
         [ CONTACT ]
-      </span>
-      <div className="w-full flex flex-row justify-center items-center gap-[5dvw] h-[20vh]">
+      </h2>
+
+      <ul className="w-full flex justify-center items-center gap-[5dvw] h-[20vh]">
         {socialMedia.map((media, index) => (
-          <a
-            href={media.link}
-            key={index}
-            className="flex items-center justify-center font-[Nippo] font-medium text-[clamp(0.6rem,3.5vw,1.5rem)]"
-          >
-            <span className="Underline">{media.title}</span>
-          </a>
+          <li key={index}>
+            <a
+              href={media.link}
+              className="flex items-center justify-center font-[Nippo] font-medium text-[clamp(0.6rem,3.5vw,1.5rem)]"
+            >
+              <span className="Underline">{media.title}</span>
+            </a>
+          </li>
         ))}
-      </div>
-      <div className="flex items-center flex-col ">
+      </ul>
+
+      <div className="flex flex-col items-center text-center">
         <div className="w-[40%] sm:w-[35%] md:w-[28%]">
-          <Logo />
+          <Logo hover={hover} setHover={setHover} />
         </div>
-        <span className="text-center mt-[3vh] font-black font-[Nippo] text-[clamp(1rem,4.5vw,2.5rem)]">
+        <p className="mt-[3vh] font-black font-[Nippo] text-[clamp(1rem,4.5vw,2.5rem)]">
           VRTL WRLD Pty Ltd
-        </span>
-        <span className=" text-center text-[clamp(0.6rem,3.5vw,1.5rem)]">
+        </p>
+        <p className="text-[clamp(0.6rem,3.5vw,1.5rem)]">
           The Craft of Digital. Working worldwide
-        </span>
+        </p>
       </div>
-      <span className="font-black opacity-70 mt-[5vh] text-center text-[clamp(0.6rem,1vw,0.8rem)]">
+
+      <p className="font-black opacity-70 mt-[5vh] text-center text-[clamp(0.6rem,1vw,0.8rem)]">
         Made by VRTL WRLD © 2025 VRTL WRLD
-      </span>
-    </div>
+      </p>
+    </footer>
   );
 };
 

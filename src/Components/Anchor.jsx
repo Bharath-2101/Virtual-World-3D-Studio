@@ -1,22 +1,50 @@
-import React from "react";
+import React, { memo } from "react";
 
-const Anchor = () => {
+const Anchor = ({ size = 30, color = "black", strokeWidth = 2 }) => {
   return (
-    <svg height={30} width={30} viewBox="0 0 30 30">
+    <svg height={size} width={size} viewBox="0 0 30 30" aria-hidden="true">
       <circle
         cx={15}
         cy={15}
         r={3}
-        stroke="black"
+        stroke={color}
         fill="none"
-        strokeWidth={2}
+        strokeWidth={strokeWidth}
       />
-      <line x1={15} x2={15} y1={12} y2={4} stroke="black" strokeWidth={2} />
-      <line x1={15} x2={15} y1={18} y2={26} stroke="black" strokeWidth={2} />
-      <line x1={18} x2={26} y1={15} y2={15} stroke="black" strokeWidth={2} />
-      <line x1={4} x2={12} y1={15} y2={15} stroke="black" strokeWidth={2} />
+      <line
+        x1={15}
+        x2={15}
+        y1={12}
+        y2={4}
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
+      <line
+        x1={15}
+        x2={15}
+        y1={18}
+        y2={26}
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
+      <line
+        x1={18}
+        x2={26}
+        y1={15}
+        y2={15}
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
+      <line
+        x1={4}
+        x2={12}
+        y1={15}
+        y2={15}
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
     </svg>
   );
 };
 
-export default Anchor;
+export default memo(Anchor);
