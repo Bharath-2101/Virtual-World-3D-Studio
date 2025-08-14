@@ -39,13 +39,15 @@ const Works = () => {
       <div className="flex flex-col gap-[5vh] lg:grid lg:grid-cols-3 lg:gap-2">
         {works.map(({ title, desc, image }, index) => (
           <article key={title} className="flex flex-col gap-2">
-            <img
-              src={image}
-              alt={`${title} showcase`}
-              loading="lazy"
-              decoding="async"
-              className="w-full aspect-[17/9] lg:aspect-square object-center object-cover"
-            />
+            <div className="overflow-hidden rounded-2xl">
+              <img
+                src={image}
+                alt={`${title} showcase`}
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-[17/9] cursor-pointer lg:aspect-square object-center object-cover hover:scale-110 ease-[cubic-bezier(0.76, 0, 0.24, 1)] duration-500 rounded-2xl"
+              />
+            </div>
             <div>
               <h3 className="font-bold text-[clamp(1.2rem,5vw,2.25rem)] lg:text-[1.5rem]">
                 {title}

@@ -55,7 +55,7 @@ const Logo3D = () => {
       </Text>
 
       <mesh ref={boxRef} position={[0, 0, 7]}>
-        <torusGeometry args={[2, 1, 16, 100]} />
+        <icosahedronGeometry args={[3]} />
         <MeshTransmissionMaterial
           color="#c1ff30"
           transmission={1}
