@@ -39,14 +39,14 @@ const Loader = () => {
           cx="25"
           cy="25"
           r="23"
-          stroke={"white"}
+          stroke={"#c1ff30"}
           strokeWidth="3"
           fill="none"
         />
         <path
           ref={topSevenRef}
           d="M25 8 L8 29 L27 29"
-          stroke={"white"}
+          stroke={"#c1ff30"}
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -55,7 +55,7 @@ const Loader = () => {
         <path
           ref={bottomSevenRef}
           d="M25 42 L42 21 L23 21"
-          stroke={"white"}
+          stroke={"#c1ff30"}
           strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
